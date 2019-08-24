@@ -106,13 +106,13 @@ public class Robot extends TimedRobot {
 
     public double getLeftJoyY(){
         double raw = stickL.getY();
-        //Dont ask... Deadzone check
+        //Dont ask... Deals with our shitty joysticks deadzone
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 
     public double getRightJoyY(){
         double raw = stickR.getY();
-        //Dont ask... Deadzone checker
+        //Dont ask... Deals with our shitty joysticks deadzone
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 
