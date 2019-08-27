@@ -17,7 +17,7 @@
             ],
             "content": {
               "_type": "Camera Stream",
-              "_title": "Camera Stream",
+              "_title": "Cam 1",
               "Crosshair/Show crosshair": true,
               "Crosshair/Crosshair color": "#FFFFFFFF",
               "Controls/Show controls": true,
@@ -35,7 +35,7 @@
             ],
             "content": {
               "_type": "Camera Stream",
-              "_title": "Camera Stream",
+              "_title": "Cam 2",
               "Crosshair/Show crosshair": true,
               "Crosshair/Crosshair color": "#FFFFFFFF",
               "Controls/Show controls": true,
@@ -55,29 +55,6 @@
               "_type": "PDP",
               "_title": "PDP",
               "Visuals/Show voltage and current values": true
-            }
-          },
-          "0,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Network Table Tree",
-              "_title": "Robo Info"
-            }
-          },
-          "11,0": {
-            "size": [
-              2,
-              2
-            ],
-            "content": {
-              "_type": "Gyro",
-              "_title": "Gyro",
-              "Visuals/Major tick spacing": 45.0,
-              "Visuals/Starting angle": 180.0,
-              "Visuals/Show tick mark ring": true
             }
           }
         }
