@@ -27,6 +27,10 @@ import com.team4012.frc2020.functions.EncoderOut;
 
 import com.team4012.frc2020.commands.KillSwitch;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
+
 
 public class Robot extends TimedRobot {
     //Initial Call of Robot
@@ -49,6 +53,9 @@ public class Robot extends TimedRobot {
     //Val
     private double JOY_DEADZONE = 0.3;
     public double robotSpeedL, robotSpeedR, avgSpeed;
+
+    //Network Tables
+    NetworkTableEntry roboSpeed;
 
     @Override
     //Initialization Class, constructor
@@ -80,6 +87,7 @@ public class Robot extends TimedRobot {
 
         myRobot = new DifferentialDrive(dL, dR);
         
+        roboSpeed.setDouble(avgSpeed);
     }
 
     @Override
