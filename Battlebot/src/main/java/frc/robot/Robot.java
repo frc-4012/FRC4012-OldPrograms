@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public class Robot extends TimedRobot {
     public DifferentialDrive myRobot;
-    public WPI_TalonSRX d1, d2, d3, d4, deathSpinner;
+    public PWMTalonSRX d1, d2, d3, d4, deathSpinner;
     public SpeedControllerGroup dL, dR;
     public XboxController myCont;
 
@@ -18,10 +18,10 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit(){
 
-        d1 = new WPI_TalonSRX(0);
-        d2 = new WPI_TalonSRX(1);
-        d3 = new WPI_TalonSRX(2);
-        d4 = new WPI_TalonSRX(3);
+        d1 = new PWMTalonSRX(0);
+        d2 = new PWMTalonSRX(1);
+        d3 = new PWMTalonSRX(2);
+        d4 = new PWMTalonSRX(3);
         dL = new SpeedControllerGroup(d1, d2);
         dR = new SpeedControllerGroup(d3, d4);
         deathSpinner = new WPI_TalonSRX(4);
