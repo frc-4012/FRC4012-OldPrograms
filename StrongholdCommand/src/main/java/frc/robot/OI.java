@@ -53,11 +53,11 @@ public class OI {
   // button.whenReleased(new ExampleCommand());
 
 
-  public double getLY(){
+  public double getL(){
     return stickL.getY();
   }
 
-  public double getRY(){
+  public double getR(){
     return stickR.getY();
   }
 
