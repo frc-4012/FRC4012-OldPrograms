@@ -2,6 +2,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 
@@ -17,11 +19,5 @@ public class DriveTrain extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-    setDefaultCommand(new TankDrive());
-  }
-
-  public void setRaw(double leftval, double rightval){
-    dL.set(leftval);
-    dR.set(rightval);
   }
 }
