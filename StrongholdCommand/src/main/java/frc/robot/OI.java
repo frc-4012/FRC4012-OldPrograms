@@ -26,9 +26,6 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-  JoystickButton shovelUp = new JoystickButton(stickR, 5);
-  JoystickButton shovelDown = new JoystickButton(stickR, 3);
-  JoystickButton shoot = new JoystickButton(stickR, 2);
 
   
 
