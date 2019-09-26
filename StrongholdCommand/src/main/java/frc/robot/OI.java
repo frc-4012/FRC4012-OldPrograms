@@ -26,7 +26,9 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-
+  Button retract = new JoystickButton(stickL, 4);
+  Button extend = new JoystickButton(stickL, 5);
+  Button off = new JoystickButton(stickL, 3);
   
 
   // There are a few additional built in buttons you can use. Additionally,
