@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Shovel;
+import frc.robot.subsystems.Piston;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,7 +28,9 @@ public class Robot extends TimedRobot {
   public static DriveTrain driveTrain;
   public static Shovel shovel;
   public static Shooter shoot;
+  public static Piston piston;
   public static OI oi;
+ 
   
   /**
    * This function is run when the robot is first started up and should be
@@ -35,10 +38,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    oi = new OI();
     driveTrain = new DriveTrain();
     shovel = new Shovel();
     shoot = new Shooter();
+    piston = new Piston();
+    oi = new OI();
   }
 
   /**

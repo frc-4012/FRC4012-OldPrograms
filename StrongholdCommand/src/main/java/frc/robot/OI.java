@@ -26,12 +26,18 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
+<<<<<<< HEAD
   JoystickButton shovelUp = new JoystickButton(stickR, 5);
   JoystickButton shovelDown = new JoystickButton(stickR, 3);
   JoystickButton shoot = new JoystickButton(stickR, 2);
 
   shoot.whenPressed(new )
 
+=======
+  Button retract = new JoystickButton(stickL, 4);
+  Button extend = new JoystickButton(stickL, 5);
+  Button off = new JoystickButton(stickL, 3);
+>>>>>>> a092303c66933f2bb4a15a3467253af1d5f377cd
   
 
   // There are a few additional built in buttons you can use. Additionally,
@@ -55,11 +61,11 @@ public class OI {
   // button.whenReleased(new ExampleCommand());
 
 
-  public double getLY(){
+  public double getL(){
     return stickL.getY();
   }
 
-  public double getRY(){
+  public double getR(){
     return stickR.getY();
   }
 
