@@ -10,7 +10,7 @@ public class Robot extends TimedRobot {
 
     public DifferentialDrive myRobot;
     public Joystick stickL, stickR;
-
+ 
     @Override
     public void robotInit(){
 

@@ -8,17 +8,48 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
+import edu.wpi.first.wpilibj.buttons.Button;
+import frc.robot.commands.CompOn;
+import frc.robot.commands.PistExtend;
+import frc.robot.commands.PistOff;
+import frc.robot.commands.PistRetract;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  public Joystick stickL = new Joystick(0);
-  public Joystick stickR = new Joystick(1);
+  Joystick stickL = new Joystick(0);
+  Joystick stickR = new Joystick(1);
+  
+  public OI(){
+    Button extend = new JoystickButton(stickL, 4);
+    Button retract = new JoystickButton(stickL, 5);
+    Button off = new JoystickButton(stickL, 3);
+    Button comp = new JoystickButton(stickL, 2);
+    retract.whenPressed(new PistRetract());
+    extend.whenPressed(new PistExtend());
+    off.whenPressed(new PistOff());
+    comp.whenPressed(new CompOn());
+
+  }
+
+
+  public double getRawL(){
+    return stickL.getY();
+  }
+
+  
+  
+  public double getRawR(){
+    
+    return stickR.getY();
+    
+  }
+}
+
+  
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
@@ -26,13 +57,6 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-  JoystickButton shovelUp = new JoystickButton(stickR, 5);
-  JoystickButton shovelDown = new JoystickButton(stickR, 3);
-  JoystickButton shoot = new JoystickButton(stickR, 2);
-
-  shoot.whenPressed(new )
-
-  
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -54,13 +78,6 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
 
+  
 
-  public double getLY(){
-    return stickL.getY();
-  }
-
-  public double getRY(){
-    return stickR.getY();
-  }
-
-}
+  
