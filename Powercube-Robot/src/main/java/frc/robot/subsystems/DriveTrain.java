@@ -10,15 +10,16 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import frc.robot.Robot;
 
 /**
  * Add your docs here.
  */
 public class DriveTrain extends Subsystem {
-  WPI_TalonSRX d1 = new WPI_TalonSRX(0);
-  WPI_TalonSRX d2 = new WPI_TalonSRX(1);
-  WPI_TalonSRX d3 = new WPI_TalonSRX(2);
-  WPI_TalonSRX d4 = new WPI_TalonSRX(3);
+  WPI_TalonSRX d1 = new WPI_TalonSRX(Robot.map.d1);
+  WPI_TalonSRX d2 = new WPI_TalonSRX(Robot.map.d2);
+  WPI_TalonSRX d3 = new WPI_TalonSRX(Robot.map.d3);
+  WPI_TalonSRX d4 = new WPI_TalonSRX(Robot.map.d4);
   SpeedControllerGroup dL = new SpeedControllerGroup(d1, d2);
   SpeedControllerGroup dR = new SpeedControllerGroup(d3, d4);
 
