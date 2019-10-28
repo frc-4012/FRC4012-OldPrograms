@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.RobotMap;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,9 +24,10 @@ import frc.robot.subsystems.DriveTrain;
  * project.
  */
 public class Robot extends TimedRobot {
+  public static RobotMap map;
   public static DriveTrain drive;
-  public static OI oi;
   public static Arm arm;
+  public static OI oi;
 
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -35,6 +37,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    map = new RobotMap();
+    drive = new DriveTrain();
+    arm = new Arm();
     oi = new OI();
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
