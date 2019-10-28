@@ -6,16 +6,15 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-import frc.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
+import frc.robot.Robot;
 
-public class TankDrive extends Command {
-  public TankDrive() {
+public class Shoot extends Command {
+  public Shoot() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.drive);
+    requires(Robot.shooter);
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +25,7 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.drive.setRaw(Robot.m_oi.getLY(), Robot.m_oi.getRY());
+    Robot.shooter.shootBall();
   }
 
   // Make this return true when this Command no longer needs to run execute()

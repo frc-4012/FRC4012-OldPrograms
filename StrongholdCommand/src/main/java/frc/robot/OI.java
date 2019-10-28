@@ -8,8 +8,12 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+import frc.robot.commands.Shoot;
+import frc.robot.commands.ShovelUp;
+import frc.robot.commands.ShovelDown;
+
 
 
 /**
@@ -17,8 +21,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  public Joystick stickL = new Joystick(0);
-  public Joystick stickR = new Joystick(1);
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
@@ -26,20 +28,30 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-<<<<<<< HEAD
-  JoystickButton shovelUp = new JoystickButton(stickR, 5);
-  JoystickButton shovelDown = new JoystickButton(stickR, 3);
-  JoystickButton shoot = new JoystickButton(stickR, 2);
+  Joystick stickL = new Joystick(0);
+  Joystick stickR = new Joystick(1);
 
-  shoot.whenPressed(new )
+  JoystickButton shooterButton = new JoystickButton(stickR, 2);
+  JoystickButton shovelButton1 = new JoystickButton(stickR, 3);
+  JoystickButton shovelButton2 = new JoystickButton(stickR, 5);
 
-=======
-  Button retract = new JoystickButton(stickL, 4);
-  Button extend = new JoystickButton(stickL, 5);
-  Button off = new JoystickButton(stickL, 3);
->>>>>>> a092303c66933f2bb4a15a3467253af1d5f377cd
+  public double getLY(){
+    return stickL.getY();
+  }
+
+  public double getRY(){
+    return stickR.getY();
+  }
+
+  public OI(){
+    shooterButton.toggleWhenPressed(new Shoot());
+    shovelButton1.whenPressed(new ShovelUp());
+    shovelButton2.whenPressed(new ShovelDown());
+  }
+
+
+
   
-
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -51,6 +63,7 @@ public class OI {
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new ExampleCommand());
+  
 
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
@@ -59,14 +72,4 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
-
-
-  public double getL(){
-    return stickL.getY();
-  }
-
-  public double getR(){
-    return stickR.getY();
-  }
-
 }

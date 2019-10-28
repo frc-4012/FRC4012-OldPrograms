@@ -9,31 +9,23 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import frc.robot.commands.TankDrive;
 
 /**
  * Add your docs here.
  */
 public class DriveTrain extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
   WPI_TalonSRX d1 = new WPI_TalonSRX(0);
   WPI_TalonSRX d2 = new WPI_TalonSRX(1);
   WPI_TalonSRX d3 = new WPI_TalonSRX(2);
   WPI_TalonSRX d4 = new WPI_TalonSRX(3);
   SpeedControllerGroup dL = new SpeedControllerGroup(d1, d2);
   SpeedControllerGroup dR = new SpeedControllerGroup(d3, d4);
-  
-
-  public DifferentialDrive myRobot = new DifferentialDrive(dL, dR);
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-    setDefaultCommand(new TankDrive());
   }
 
   public void setRaw(double leftVal, double rightVal){

@@ -30,7 +30,7 @@ import edu.wpi.cscore.UsbCamera;
  * project.
  */
 public class Robot extends IterativeRobot {
-  public Joystick stickL, stickR;
+  public Joystick stickL, stickR, shooterStick;
   public WPI_TalonSRX d1, d2, d3, d4, shooter, shovel;
   public DifferentialDrive myRobot;
   public SpeedControllerGroup dL, dR;
@@ -50,11 +50,12 @@ public class Robot extends IterativeRobot {
     d3 = new WPI_TalonSRX(3);
     d4 = new WPI_TalonSRX(4);
 
-    shooter = new WPI_TalonSRX(5);
-    shovel = new WPI_TalonSRX(6);
+    shooter = new WPI_TalonSRX(6);
+    shovel = new WPI_TalonSRX(5);
 
     stickL = new Joystick(0);
     stickR = new Joystick(1);
+    shooterStick = new Joystick(2);
 
     
 
@@ -108,7 +109,6 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopPeriodic() {
     myRobot.tankDrive(-stickL.getY(), -stickR.getY());
-    shooter();
     shovel();
   }
 
@@ -121,7 +121,7 @@ public class Robot extends IterativeRobot {
       tFlipShoot = false;
     }
   }
-
+  
   public void shovel(){
     if(stickR.getRawButton(5)){
       shovel.set(-1);
