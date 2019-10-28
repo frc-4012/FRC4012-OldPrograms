@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Servo;
+import frc.robot.Robot;
 
 /**
  * Add your docs here.
@@ -16,7 +17,7 @@ import edu.wpi.first.wpilibj.Servo;
 public class Arm extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  Servo arm = new Servo(0);
+  Servo arm = new Servo(Robot.map.servopin);
 
   @Override
   public void initDefaultCommand() {
