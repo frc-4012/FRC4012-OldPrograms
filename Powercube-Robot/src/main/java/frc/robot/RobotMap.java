@@ -18,6 +18,7 @@ public class RobotMap {
   public static int d2 = 1;
   public static int d3 = 2;
   public static int d4 = 3;
+  public static int servopin = 0;
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;
