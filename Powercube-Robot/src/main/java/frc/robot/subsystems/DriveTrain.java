@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.DifferentialDrive;
 import frc.robot.Robot;
 
 /**
@@ -22,6 +23,7 @@ public class DriveTrain extends Subsystem {
   WPI_TalonSRX d4 = new WPI_TalonSRX(Robot.map.d4);
   SpeedControllerGroup dL = new SpeedControllerGroup(d1, d2);
   SpeedControllerGroup dR = new SpeedControllerGroup(d3, d4);
+  DifferentialDrive robotDrive = new DifferentialDrive(dL, dR);
 
   @Override
   public void initDefaultCommand() {
@@ -32,5 +34,9 @@ public class DriveTrain extends Subsystem {
   public void setRaw(double leftVal, double rightVal){
     dL.set(leftVal);
     dR.set(rightVal);
+  }
+  
+  public void arcadeDrive(double power, double angle){
+    robotDrive.arcadeDrive(power, angle);
   }
 }
