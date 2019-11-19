@@ -10,7 +10,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.Constants;
 import frc.robot.commands.TankDrive;
 
 /**
@@ -18,14 +18,17 @@ import frc.robot.commands.TankDrive;
  */
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-  public WPI_TalonSRX d1 = new WPI_TalonSRX(0);
-  public WPI_TalonSRX d2 = new WPI_TalonSRX(3);
-  public WPI_TalonSRX d3 = new WPI_TalonSRX(1);
-  public WPI_TalonSRX d4 = new WPI_TalonSRX(2);
-  public SpeedControllerGroup dL = new SpeedControllerGroup(d1, d2);
-  public SpeedControllerGroup dR = new SpeedControllerGroup(d3, d4);
-
+  // here. Call these from Commands
+  public static WPI_TalonSRX driveLeftMaster = new WPI_TalonSRX(Constants.LEFT_FRONT_TALON);
+  public static WPI_TalonSRX driveLeftSlave = new WPI_TalonSRX(Constants.LEFT_BACK_TALON);
+  public static WPI_TalonSRX driveRightMaster = new WPI_TalonSRX(Constants.RIGHT_FRONT_TALON);
+  public static WPI_TalonSRX driveRightSlave = new WPI_TalonSRX(Constants.RIGHT_BACK_TALON);
+  
+  public DriveTrain(){
+    driveLeftSlave.follow(driveLeftMaster);
+    driveRightSlave.follow(driveRightMaster);
+  }
+  
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
@@ -34,7 +37,7 @@ public class DriveTrain extends Subsystem {
   }
 
   public void setRaw(double leftval, double rightval){
-    dL.set(leftval);
-    dR.set(rightval);
+    driveLeftMaster.set(leftval);
+    driveRightMaster.set(rightVal);
   }
 }
