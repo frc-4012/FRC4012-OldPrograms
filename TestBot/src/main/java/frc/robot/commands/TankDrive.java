@@ -25,7 +25,7 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.drive.setRaw(Robot.oi.getRawR(), -Robot.oi.getRawL());
+    Robot.drive.setRaw(Robot.controls.Operator.getLY(), Robot.controls.Operator.getRY());
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -43,5 +43,6 @@ public class TankDrive extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
