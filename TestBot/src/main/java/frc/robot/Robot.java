@@ -15,8 +15,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.Piston;
-import edu.wpi.first.wpilibj.Compressor;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,9 +25,6 @@ import edu.wpi.first.wpilibj.Compressor;
  */
 public class Robot extends TimedRobot {
   public static DriveTrain drive;
-  public static Piston piston;
-  public UsbCamera camera1;
-  public Compressor c;
 
   public static OI oi;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -41,8 +36,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     drive = new DriveTrain();
-    piston = new Piston();
-    c = new Compressor(0);
     oi = new OI();
     
 
