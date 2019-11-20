@@ -14,6 +14,13 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
     public Joystick stickL = new Joystick(Constants.LEFT_JOY);
     public Joystick stickR = new Joystick(Constants.RIGHT_JOY);
+    
+    public static void init(){
+        JoystickButton intake = new JoystickButton(stickR, Constants.INTAKE_BUTTON);
+        JoystickButton outake = new JoystickButton(stickR, Constants.OUTAKE_BUTTON);
+                                         
+                      
+    }
 
     public double getL(){
         return stickL.getY();
