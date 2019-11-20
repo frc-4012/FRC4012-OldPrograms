@@ -26,6 +26,7 @@ public class DriveTrain extends Subsystem {
   WPI_TalonSRX dBackSlave = new WPI_TalonSRX(Constants.BACK_RIGHT);
 
   public DriveTrain(){
+    super("DriveTrain");
     dFrontSlave.follow(dFrontMaster);
     dBackSlave.follow(dBackMaster);
   }
