@@ -3,7 +3,7 @@ package frc.robot.subsystems;
 public class Elevator extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  WPI_TalonSPX m_intakeLeft = new WPI_VictorSPX
+  WPI_TalonSRX m_elevator = new WPI_TalonSRX(Constants.elevatorMotor);
 
   public DriveTrain(){
     super("Elevator");
