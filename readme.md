@@ -1,2 +1,2 @@
-# 4012's Repo for the 2020 season
-Here, code for our season will be stored.  Any questions, email me daniel.pearson.21@josephsea.org
+# 4012's Repo forold programs
+Here, code for off season bots and previous bots are stored.  Any questions, email me daniel.pearson.21@josephsea.org
